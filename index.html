@@ -16,7 +16,7 @@
     navigator.getUserMedia({video: true, audio: false}, 
      function(stream) { // for success case
       console.log(stream);
-      var userAngent = window.navigator.userAgent.toLocaleLowerCase();
+      var userAngent = window.navigator.userAgent.toLowerCase();
 
       if(userAngent.indexOf('chome')!=-1){
         video.srcObject = stream;

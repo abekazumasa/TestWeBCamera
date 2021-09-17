@@ -1,40 +1,51 @@
 ﻿<!DOCTYPE html>
 <html>
- <head>
+
+<head>
    <meta charset="UTF-8">
-   
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-   <script src="./dil/jquery-3.6.0.min.js"></script>
+
+   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+
    <script defer src="https://use.fontawesome.com/releases/v5.10.2/js/all.js"></script>
    <link rel="stylesheet" type="text/css" href="./css/print.css">
-   <link rel="stylesheet" type ="text/css" href="./css/main.css">
-  <title class="print-off">Self</title>
- </head>
- <body>
-    <div class="print-area">
-   <img id="viewImage" src="./image/default.png">
+   <link rel="stylesheet" type="text/css" href="./css/main.css">
+   <title class="print-off">Testvar1.1</title>
+</head>
+
+<body>
+   <!-- main -->
+   <div class="warrp">
+      <canvas id="canvas-area"></canvas>
+      <div class="print-area">
+      </div>
    </div>
+   <!-- nav -->
+   <nav class="buttom-btn-nav">
+      <ul>
+         <li> <label for="homeBtn">
+            <i class="fas fa-home"></i><span id="navName">ホーム</span></label>
+            <button id="homeBtn" class="btn"></button>
+         </li>
+         <li>
+            <label for="image_file" class="filelabel"><i class="fas fa-camera"></i><span
+                  id="navName">撮る/画像選択</span></label>
+            <input type="file" accept="image/*" id="image_file" class="fileinput">
+         </li>
+         <li>
+            <label for="printImage"><i class="fas fa-print"></i><span id="navName">印刷する</span></label>
+            <button id="printImage" class="print-btn"></button>
+         </li>
+         <li>
+            <label for="processing"><i class="fas fa-file-signature"></i><span id="navName">画像加工</span></label>
+            <button id="processing" class="btn"></button>
+         </li>
+         <div id="clearfloat"></div>
+      </ul>
+   </nav>
+   <script src="./dil/jquery-3.6.0.min.js"></script>
+   <!-- <script src="./dil/src/getImage.js"></script> -->
+   <script src="./dil/printSetting.js"></script>
+   <script src="./dil/dist/main.js"></script>
+</body>
 
-   <ul class="buttonNav">
-
-      <li>
-         <i class="fas fa-home fa-3x"></i><span id="navName">ホーム</span>
-      </li>
-      <li>
-         <label for="image_file" class="filelabel"><i class="fas fa-camera  fa-3x"></i><span id="navName">撮る/画像選択</span></label>
-         <input type="file" accept="image/*" id="image_file" class="fileinput">
-      </li>
-      <li>
-      <label for="printImage" ><i class="fas fa-print fa-3x"></i><span id="navName">印刷する</span></label>
-      <button id="printImage" class="print-btn"></button>
-      </li>
-      <li>
-         <label for="processing"><i class="fas fa-file-signature fa-3x"></i><span id="navName">画像加工</span></label>
-         <button id="processing" class="processing-btn"></button>      
-      </li>
-      <div id="clearfloat"></div>
-   </ul>
-<script src = "dil/camera.js"></script>
-<script src="./dil/printSetting.js"></script>
- </body>
 </html>

@@ -1,41 +1,86 @@
-img{
-    max-width: 100%;
-    width: auto;
-    height: auto;
+
+/* main */
+body{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    /* background-color:#32221b ; */
 }
+.warrp{
+    border: 1px solid;
+box-sizing: border-box;
+margin: 50px;
+background-color: floralwhite;
+
+}
+.print-area{
+    width: 100vw;
+    height: 75vh;
+    padding: 0%;
+    margin: 0%;
+}
+.canvas-area{
+    width: 100%;
+    height: calc(100% - 90px);
+    touch-action: none;
+    user-select: none;
+}
+
 
 #clearfloat{
     clear: both;
 }
 
 /* nav */
-.buttonNav{
+.buttom-btn-nav{
+    height: 70px;
     position: fixed;
-    left: 0;
+    display: block;
+    background: #ffffff;
     bottom: 0;
-    background: white;
-    width: 100%;
-    text-align: center;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
+.buttom-btn-nav ul{
+    list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+justify-content: space-evenly;
+}
+.buttom-btn-nav ul li{
+    flex: 1;
+}
+#navName {
+    font-size: 12px;
+    line-height: 1.2;
+
+}
+.buttom-btn-nav ul li label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+    color: #f0f0f0;    
+    background-color: #754c24;
+    margin: 1px;
+    text-shadow:1px 1px 0 #32221b, -1px -1px 0 #32221b,
+    -1px 1px 0 #32221b, 1px -1px 0 #32221b,
+    0px 1px 0 #32221b,  0-1px 0 #32221b,
+    -1px 0 0 #32221b, 1px 0 0 #32221b;
+}
+
+.buttom-btn-nav ul li label svg {
+    font-size: 40px;
+
+    }
 
 .fileinput{
     display: none;
   }
 button{
     display: none;
-}
-
-.buttonNav li {
-    display: table;
-    table-layout: fixed;
-    width: 100px;
-    padding: 5px;
-    list-style: none;
-    text-align: center;
-    float: left;
-  
-}
-#navName{
-    display: block;
-    font-size: 4px;
 }

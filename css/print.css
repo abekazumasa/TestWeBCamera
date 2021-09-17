@@ -1,6 +1,6 @@
 body{
-    background: white;
+    background: white !important;
 }
 .print-off{
-    display: none;
+    display: none !important;
 }

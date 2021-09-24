@@ -14,7 +14,7 @@
 
     }
     .print-area{
-        position: fixed !important;
+        position: relative !important;
         top: 0px !important;
         left: 0px !important;
     }

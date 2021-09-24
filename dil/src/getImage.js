@@ -29,9 +29,9 @@ class InteractCanvas {
       if(this.resizeFlag){
         this.resizeFlag = false;
         if(this.resizeTimer){
-          window.cancelAnimationFrame(this.resizeTimer);
+          this.canvas.cancelAnimationFrame(this.resizeTimer);
         }
-        this.resizeTimer = window.requestAnimationFrame(() => {
+        this.resizeTimer = this.canvas.requestAnimationFrame(() => {
           //ここにリサイズ時の処理を書く
           this.drawResizeImage();
           this.resizeFlag = true;

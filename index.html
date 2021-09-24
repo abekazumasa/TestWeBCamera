@@ -7,7 +7,7 @@
    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
    <script defer src="https://use.fontawesome.com/releases/v5.10.2/js/all.js"></script>
-   <link rel="stylesheet" type="text/css" href="./css/print.css">
+   <link rel="stylesheet" type="text/css" href="./css/print.css" media="print" />
    <link rel="stylesheet" type="text/css" href="./css/main.css">
    <title class="print-off">Testvar1.1</title>
 </head>
@@ -15,7 +15,10 @@
 <body>
    <!-- main -->
    <div class="warrp">
+      <div class ="main-canvas">
       <canvas id="canvas-area"></canvas>
+
+      </div>
       <div class="print-area">
       </div>
    </div>
@@ -43,7 +46,6 @@
       </ul>
    </nav>
    <script src="./dil/jquery-3.6.0.min.js"></script>
-   <!-- <script src="./dil/src/getImage.js"></script> -->
    <script src="./dil/printSetting.js"></script>
    <script src="./dil/dist/main.js"></script>
 </body>

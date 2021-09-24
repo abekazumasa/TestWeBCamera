@@ -1,6 +1,21 @@
-body{
-    background: white !important;
-}
-.print-off{
-    display: none !important;
+@media print{
+    
+    body{
+        background: white !important;
+    }
+    .print-off{
+        display: none !important;
+    }
+    #print{
+        padding: 0% !important;
+        margin: 0% !important;
+        width: 100% !important;
+        height: 100% !important;
+
+    }
+    .print-area{
+        position: fixed !important;
+        top: 0px !important;
+        left: 0px !important;
+    }
 }

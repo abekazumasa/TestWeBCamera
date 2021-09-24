@@ -44,8 +44,8 @@ class InteractCanvas {
   //canvasの描画機能を有効化
   createCanvasContext() {
     this.canvas = document.getElementById('canvas-area');
-    this.canvas.width  = this.canvas.clientWidth * window.devicePixelRatio;
-    this.canvas.height = this.canvas.clientHeight * window.devicePixelRatio;
+    this.canvas.width  = this.canvas.clientWidth* window.devicePixelRatio;
+    this.canvas.height = this.canvas.clientHeight* window.devicePixelRatio;
     this.ctx           = this.canvas.getContext('2d');
     this.isDrawed      = false;
   }
@@ -91,12 +91,9 @@ class InteractCanvas {
     //幅・高さの上限
     const maxW  = this.canvas.width;
     const maxH  = this.canvas.height;
-
     //描画する画像の幅もしくは高さが上限を超える場合
     if(
-      this.img.width >= maxW ||
-      this.img.height >= maxW
-      )
+      this.img.width >= maxW ||this.img.height >= maxH)
     {
       //高さの上限に合わせる
       this.drawHeight = maxH;
@@ -113,6 +110,7 @@ class InteractCanvas {
       this.drawHeight = this.img.height;
     }
 
+    
     //位置をcanvasの中心にする
     this.position = {
       x : this.canvas.width / 2 - this.drawWidth / 2,
@@ -147,7 +145,7 @@ class InteractCanvas {
     }
     this.interact = interact('#canvas-area')
     .draggable({
-      inertia     : true,
+      inertia     : false,
       onstart     : (e) => {
         this.dragStartListener(e);
       },
@@ -253,7 +251,7 @@ class InteractCanvas {
       x >= this.position.x &&
       x <= this.position.x + this.drawWidth &&
       y >= this.position.y &&
-      y <= this.position.y + this.drawHeight
+      y <= this.position.y + this.drawHeight+this.drawHeight
       );
   }
 

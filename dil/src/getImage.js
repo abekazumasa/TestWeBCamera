@@ -2,7 +2,7 @@ import interact from 'interactjs'
 
 class InteractCanvas {
   constructor(){
-    this.file        = document.getElementById('image_file');
+    this.file = document.getElementById('image_file');
 
     //リサイズフラグ
     this.resizeFlag  = true;
@@ -25,7 +25,7 @@ class InteractCanvas {
     }, false);
 
     //画面リサイズ
-    window.addEventListener( 'resize', () => {
+    this.canvas.addEventListener( 'resize', () => {
       if(this.resizeFlag){
         this.resizeFlag = false;
         if(this.resizeTimer){
@@ -92,8 +92,7 @@ class InteractCanvas {
     const maxW  = this.canvas.width;
     const maxH  = this.canvas.height;
     //描画する画像の幅もしくは高さが上限を超える場合
-    if(
-      this.img.width >= maxW ||this.img.height >= maxH)
+    if(this.img.width >= maxW ||this.img.height >= maxH)
     {
       //高さの上限に合わせる
       this.drawHeight = maxH;

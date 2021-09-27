@@ -19,16 +19,17 @@ $(function () {
             print();
            
         },100);
-        
+        setTimeout(function(){
+
+            $('#print').remove();
+            $('.print-off').removeClass('print-off');
+            outputImg.remove();
+        },200);
         
     });
     function print(){
 
         window.print();
-        $('#print').remove();
-        $('.print-off').removeClass('print-off');
-        outputImg.remove();
     }
-
 
 });

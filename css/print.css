@@ -1,14 +1,44 @@
+    
+    .warrp{
+        position: fixed;
+        display: block;
+        width: 100%;
+        height: 100vh;
+        background-color: floralwhite;
+    }
+        
     body{
-        background: white !important;
+        position: fixed;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: floralwhite;
     }
     .print-off{
-        display: none !important;
+        display: none;
     }
-    #print{
-        padding: 0% !important;
-        margin: 0% !important;
-
+    .main-canvas{
+        display: flex;
+        background-color: white;
+        margin: 0;
+        height: auto;
+        position: relative;
+        top: 0;
     }
     .print-area{
-        position: static !important;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        touch-action: none;
+        user-select: none;
+        background-color: white;
+        z-index: 99999;
+    }
+    #canvas-area{
+        display: none;
+    }
+    img{
+        width: 100%;
+        height: 100%;
     }

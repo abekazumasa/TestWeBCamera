@@ -6,27 +6,25 @@
 
    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
-   <script defer src="https://use.fontawesome.com/releases/v5.10.2/js/all.js"></script>
-   <link rel="stylesheet" type="text/css" href="./css/print.css">
-   <link rel="stylesheet" type="text/css" href="./css/main.css">
+   
+   <link rel="stylesheet" type="text/css" media="print" href="./css/print.css">
+   <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
    <title class="print-off">Testvar1.1</title>
 </head>
 
 <body>
    <!-- main -->
    <div class="warrp">
-      <div class ="main-canvas">
-      <canvas id="canvas-area"></canvas>
-
-      </div>
-      <div class="print-area">
+      <div class="main-canvas">
+         <canvas id="canvas-area"></canvas>
+         <div class="print-area"></div>
       </div>
    </div>
    <!-- nav -->
    <nav class="buttom-btn-nav">
       <ul>
          <li> <label for="homeBtn">
-            <i class="fas fa-home"></i><span id="navName">ホーム</span></label>
+               <i class="fas fa-home"></i><span id="navName">ホーム</span></label>
             <button id="homeBtn" class="btn"></button>
          </li>
          <li>
@@ -45,6 +43,7 @@
          <div id="clearfloat"></div>
       </ul>
    </nav>
+   <script defer src="https://use.fontawesome.com/releases/v5.10.2/js/all.js"></script>
    <script src="./dil/jquery-3.6.0.min.js"></script>
    <script src="./dil/printSetting.js"></script>
    <script src="./dil/dist/main.js"></script>

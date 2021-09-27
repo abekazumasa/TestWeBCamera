@@ -41,6 +41,9 @@ body{
 .print-area{
     position: fixed;
     top: 1000000px;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
 }
 
 #clearfloat{

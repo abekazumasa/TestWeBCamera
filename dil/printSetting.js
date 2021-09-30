@@ -19,7 +19,7 @@ $(function () {
         $('body > :not(.print)').addClass('print-off');
         setTimeout(function () {
             print();
-        }, 100);
+        }, 200);
 
     });
     function print() {

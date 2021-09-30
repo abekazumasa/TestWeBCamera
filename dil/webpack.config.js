@@ -1,6 +1,6 @@
 module.exports = {
     // メインとなるJavaScriptファイル（エントリーポイント）
-    entry: `./src/getImage.js`,
+    entry: `./src/index.js`,
     mode: "development",
     // ファイルの出力設定
     output: {

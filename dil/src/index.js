@@ -52,7 +52,7 @@ dorag.resizable({
   // keep the element within the area of it's parent
   modifiers: [
     interact.modifiers.restrictRect({
-      restriction: 'parent',
+      restriction: '.main-canvas',
       endOnly: true
     })
   ],
@@ -78,9 +78,6 @@ dorag.resizable({
   listeners: {
     start (event) {
       angleScale.angle -= event.angle
-      
-      clearTimeout(resetTimeout)
-      dorag.classList.remove('reset')
     },
     move (event) {
       // document.body.appendChild(new Text(event.scale))
@@ -96,12 +93,16 @@ dorag.resizable({
     end (event) {
       angleScale.angle = angleScale.angle + event.angle
       angleScale.scale = angleScale.scale * event.scale
-
-      resetTimeout = setTimeout(reset, 1000)
-      dorag.classList.add('reset')
     }
   }
 })
+
+function reset () {
+  scaleElement.style.transform = 'scale(1)'
+
+  angleScale.angle = 0
+  angleScale.scale = 1
+}
 
 function dragMoveListener (event) {
 var target = event.target

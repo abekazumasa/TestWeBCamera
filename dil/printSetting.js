@@ -17,9 +17,10 @@ $(function () {
         $('.warrp').addClass('print');
         $(printarea).addClass('print');
         $('body > :not(.print)').addClass('print-off');
-        setTimeout(function () {
+        outputImg.onload = function(){
             print();
-        }, 200);
+        }
+
 
     });
     function print() {

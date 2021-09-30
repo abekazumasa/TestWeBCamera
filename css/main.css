@@ -55,7 +55,7 @@ body{
 
 /* nav */
 .buttom-btn-nav{
-    height: 70px;
+    height: 90px;
     position: fixed;
     display: block;
     background: #ffffff;
@@ -85,7 +85,7 @@ body{
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    height: 50px;
+    height: 70px;
     color: #f0f0f0;    
     background-color: #754c24;
     margin: 1px;

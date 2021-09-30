@@ -24,19 +24,27 @@
    <nav class="buttom-btn-nav">
       <ul>
          <li>
-            <label for="image_file" class="filelabel"><i class="fas fa-camera"></i><span
-                  id="navName">撮る/画像選択</span></label>
+            <label for="image_file" class="filelabel">
+               <span id="navName">step1</span>
+               <i class="fas fa-camera"></i>
+               <span id="navName">撮る/画像選択</span>
+            </label>
             <input type="file" accept="image/*" id="image_file" class="fileinput">
          </li>
          <li>
-            <label for="printImage"><i class="fas fa-print"></i><span id="navName">印刷する</span></label>
-            <button id="printImage" class="print-btn"></button>
-         </li>
-         <li>
-            <label for="processing"><i class="fas fa-file-signature"></i><span id="navName">画像加工</span></label>
+            <label for="processing">
+               <span id="navName">step2</span>
+               <i class="fas fa-file-signature"></i>
+               <span id="navName">画像加工</span></label>
             <button id="processing" class="btn"></button>
          </li>
-         <div id="clearfloat"></div>
+         <li>
+            <label for="printImage">
+               <span id="navName">step3</span>
+               <i class="fas fa-print"></i>
+               <span id="navName">印刷する</span></label>
+            <button id="printImage" class="print-btn"></button>
+         </li>
       </ul>
    </nav>
    <!-- script -->

@@ -1,53 +1,54 @@
 import interact from 'interactjs'
 
 const dorag = interact('#canvas-area');
-const zoom= interact('.main-canvas');
-const position = { x: 0, y: 0 }
+var gestureArea = document.getElementsByClassName('main-canvas');
+var scaleElement = document.getElementById('canvas-area');
+var resetTimeout=1000;
 var angleScale = {
   angle: 0,
   scale: 1
 }
 
-dorag.resizable({
-  // resize from all edges and corners
-  edges: { left: true, right: true, bottom: true, top: true },
+// dorag.resizable({
+//   // resize from all edges and corners
+//   edges: { left: true, right: true, bottom: true, top: true },
 
-  listeners: {
-    move (event) {
-      var target = event.target
-      var x = (parseFloat(target.getAttribute('data-x')) || 0)
-      var y = (parseFloat(target.getAttribute('data-y')) || 0)
+//   listeners: {
+//     move (event) {
+//       var target = event.target
+//       var x = (parseFloat(target.getAttribute('data-x')) || 0)
+//       var y = (parseFloat(target.getAttribute('data-y')) || 0)
 
-      // update the element's style
-      target.style.width = event.rect.width + 'px'
-      target.style.height = event.rect.height + 'px'
+//       // update the element's style
+//       target.style.width = event.rect.width + 'px'
+//       target.style.height = event.rect.height + 'px'
 
-      // translate when resizing from top or left edges
-      x += event.deltaRect.left
-      y += event.deltaRect.top
+//       // translate when resizing from top or left edges
+//       x += event.deltaRect.left
+//       y += event.deltaRect.top
 
-      target.style.transform = 'translate(' + x + 'px,' + y + 'px)'
+//       target.style.transform = 'translate(' + x + 'px,' + y + 'px)'
 
-      target.setAttribute('data-x', x)
-      target.setAttribute('data-y', y)
-      target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
-    }
-  },
-  modifiers: [
-    // keep the edges inside the parent
-    interact.modifiers.restrictEdges({
-      outer: '.main-canvas'
-    }),
+//       target.setAttribute('data-x', x)
+//       target.setAttribute('data-y', y)
+//       target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
+//     }
+//   },
+//   modifiers: [
+//     // keep the edges inside the parent
+//     interact.modifiers.restrictEdges({
+//       outer: '.main-canvas'
+//     }),
 
-    // minimum size
-    interact.modifiers.restrictSize({
-      min: { width: 100, height: 50 }
-    })
-  ],
+//     // minimum size
+//     interact.modifiers.restrictSize({
+//       min: { width: 100, height: 50 }
+//     })
+//   ],
 
-  inertia: true
-})
-.draggable({
+//   inertia: true
+// })
+dorag.draggable({
   // enable inertial throwing
   inertia: true,
   // keep the element within the area of it's parent
@@ -75,29 +76,39 @@ dorag.resizable({
           .toFixed(2) + 'px')
     }
   }
-});
-zoom.gesturable({
-  listeners: {
-    start (event) {
-      angleScale.angle -= event.angle
-    },
-    move (event) {
-      // document.body.appendChild(new Text(event.scale))
-      var currentAngle = event.angle + angleScale.angle
-      var currentScale = event.scale * angleScale.scale
+})
+interact(gestureArea)
+  .gesturable({
+    listeners: {
+      start (event) {
+        angleScale.angle -= event.angle
 
-      dorag.style.transform =
-        'rotate(' + currentAngle + 'deg)' + 'scale(' + currentScale + ')'
+        clearTimeout(resetTimeout)
+        scaleElement.classList.remove('reset')
+      },
+      move (event) {
+        // document.body.appendChild(new Text(event.scale))
+        var currentAngle = event.angle + angleScale.angle
+        var currentScale = event.scale * angleScale.scale
 
-      // uses the dragMoveListener from the draggable demo above
-      dragMoveListener(event)
-    },
-    end (event) {
-      angleScale.angle = angleScale.angle + event.angle
-      angleScale.scale = angleScale.scale * event.scale
+        scaleElement.style.transform =
+          'rotate(' + currentAngle + 'deg)' + 'scale(' + currentScale + ')'
+
+        // uses the dragMoveListener from the draggable demo above
+        dragMoveListener(event)
+      },
+      end (event) {
+        angleScale.angle = angleScale.angle + event.angle
+        angleScale.scale = angleScale.scale * event.scale
+
+        resetTimeout = setTimeout(reset, 1000)
+        scaleElement.classList.add('reset')
+      }
     }
-  }
-});
+  })
+  .draggable({
+    listeners: { move: dragMoveListener }
+  })
 
 function reset () {
   scaleElement.style.transform = 'scale(1)'

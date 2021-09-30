@@ -1,6 +1,7 @@
 import interact from 'interactjs'
 
 const dorag = interact('#canvas-area');
+const zoom= interact('.main-canvas');
 const position = { x: 0, y: 0 }
 var angleScale = {
   angle: 0,
@@ -74,7 +75,8 @@ dorag.resizable({
           .toFixed(2) + 'px')
     }
   }
-}).gesturable({
+});
+zoom.gesturable({
   listeners: {
     start (event) {
       angleScale.angle -= event.angle
@@ -95,7 +97,7 @@ dorag.resizable({
       angleScale.scale = angleScale.scale * event.scale
     }
   }
-})
+});
 
 function reset () {
   scaleElement.style.transform = 'scale(1)'

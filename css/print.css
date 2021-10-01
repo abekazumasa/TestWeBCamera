@@ -1,40 +1,68 @@
-    
-    .warrp{
-        position: fixed;
-        display: block;
-        width: 100vw;
-        height: 100vh;
-        background-color: floralwhite;
-    }
-        
-    body{
-        position: fixed;
-        margin: 0px;
-        padding: 0px;
-        width: 100%;
-        height: 100%;
-        background-color: floralwhite;
-    }
-    .print-off{
-        display: none;
-    }
-    .main-canvas{
-        display: flex;
-        background-color: white;
-        margin: 0;
-        height: auto;
-        position: relative;
-        top: 0;
-    }
-    .print-area{
-        width: 100%;
-        height: 100%;
-        z-index: 99999;
-    }
-    #canvas-area{
-        display: none;
-    }
-    img{
-        width: 100%;
-        height: 100%;
-    }
+html, body{
+    overflow: hidden; 
+   
+ } 
+
+/* main */
+body{
+   margin: 0px;
+   padding: 0px;
+   width: 100%;
+   height: 100%;
+}
+
+.warrp{
+   width: 100%;
+   height: 100vh;
+} 
+.main-canvas{
+   margin: 4%;
+   height: 50%;
+   position: relative;
+   top: 15%;
+  
+
+}
+/* .temp{
+   position: relative;
+   top: 15%;
+   left: 0;
+   width: 100%;
+   height: 100%;
+} */
+#canvas-area{
+   touch-action: none;
+   user-select: none;
+   width: 100%;
+   height: 100%;
+}
+
+.print-area{
+   touch-action: none;
+   user-select: none;
+   z-index: 100;
+}
+
+
+/* nav */
+.buttom-btn-nav{
+    display: none;
+}
+.buttom-btn-nav ul{
+    display: none;
+}
+.buttom-btn-nav ul li{
+   display: none;
+}
+.buttom-btn-nav ul li label {
+    display: none;
+}
+.fileinput{
+   display: none;
+}
+button{
+   display: none;
+}
+.print-off{
+    display: none;
+}

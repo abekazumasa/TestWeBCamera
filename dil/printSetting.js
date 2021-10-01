@@ -35,6 +35,7 @@ $(function () {
         var data = canvasData.toDataURL();
         outputImg.src = data;
         $('.print-area').append(outputImg);
+
         $('.print-area').addClass('print');
         $('body > :not(.print)').addClass('print-off');
         print();

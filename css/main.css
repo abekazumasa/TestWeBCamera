@@ -27,13 +27,21 @@ body{
     height: 50%;
     position: relative;
     top: 15%;
+   
+
 }
-#canvas-area{
-    display: flex;
+/* .temp{
+    position: relative;
+    top: 15%;
+    left: 0;
     width: 100%;
     height: 100%;
+} */
+#canvas-area{
     touch-action: none;
     user-select: none;
+    width: 100%;
+    height: 100%;
     background-color: white;
     z-index: 99999;
     border:  1px solid;
@@ -41,8 +49,6 @@ body{
 
 .print-area{
     display: flex;
-    width: 100%;
-    height: 100%;
     touch-action: none;
     user-select: none;
     z-index: 100;

@@ -1,34 +1,50 @@
 
-const canvasData = document.getElementById("canvas-area");
+//const canvasData = document.getElementById("canvas-area");
+function closePrint () {
+    document.body.removeChild(this.__container__);
+  }
+  
+  function setPrint () {
+    this.contentWindow.__container__ = this;
+    this.contentWindow.onbeforeunload = closePrint;
+    this.contentWindow.onafterprint = closePrint;
+    this.contentWindow.focus(); // Required for IE
+    this.contentWindow.print();
+  }
+  
+  function printPage (sURL) {
+    var oHiddFrame = document.createElement("iframe");
+    oHiddFrame.onload = setPrint;
+    oHiddFrame.style.position = "fixed";
+    oHiddFrame.style.right = "0";
+    oHiddFrame.style.bottom = "0";
+    oHiddFrame.style.width = "0";
+    oHiddFrame.style.height = "0";
+    oHiddFrame.style.border = "0";
+    oHiddFrame.src = sURL;
+    document.body.appendChild(oHiddFrame);
+  }
+// $(function () {
+//     var outputImg = document.createElement('img');
+//     //印刷ボタンをクリックした時の処理
+//     $('.print-btn').on('click', function () {
+//         var data = canvasData.toDataURL();
+//         outputImg.src = data;
+//         $('.print-area').append(outputImg);
+
+//         //プリント用の要素「#print」を作成し、上で取得したprintAreaをその子要素に入れる。
+//         // $('.warrp').addClass('print');
+//         // $('.print-area').addClass('print');
+//         // $('body > :not(.print)').addClass('print-off');
+//             print();
 
 
+//     });
+//     function print() {
 
-$(function () {
-    var outputImg = document.createElement('img');
-    //印刷ボタンをクリックした時の処理
-    $('.print-btn').on('click', function () {
-        var data = canvasData.toDataURL();
-        outputImg.src = data;
-        $('.print-area').append(outputImg);
+//         window.print();
+//         // $('print').removeClass('print');
+//         // $('.print-off').removeClass('print-off');
+//     }
 
-        //プリントしたいエリアの取得
-        var printarea = document.getElementsByClassName('print-area');
-        //プリント用の要素「#print」を作成し、上で取得したprintAreaをその子要素に入れる。
-        $('.warrp').addClass('print');
-        $(printarea).addClass('print');
-        $('body > :not(.print)').addClass('print-off');
-        outputImg.onload = function(){
-            print();
-        }
-
-
-    });
-    function print() {
-
-        window.print();
-        $('print').removeClass('print');
-        $('.print-off').removeClass('print-off');
-        outputImg.remove();
-    }
-
-});
+// });

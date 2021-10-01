@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "webpack"
+    "pbuild": "webpack --mode production",
+    "wbuild": "webpack --mode development"
   },
   "devDependencies": {
     "interactjs": "^1.10.11",

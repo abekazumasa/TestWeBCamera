@@ -50,7 +50,7 @@ dorag.resizable({
 })
 .draggable({
   // enable inertial throwing
-  inertia: true,
+  inertia: false,
   // keep the element within the area of it's parent
   modifiers: [
     interact.modifiers.restrictRect({
@@ -199,8 +199,9 @@ class InteractCanvas {
   //canvasの中心に描画する
   drawImageCenter() {
     //幅・高さの上限
-    const maxW = this.canvas.width;
-    const maxH = this.canvas.height;
+    var maincanvas = document.getElementsByClassName('main-canvas');
+    const maxW = maincanvas.width;
+    const maxH = maincanvas.height;
     //描画する画像の幅もしくは高さが上限を超える場合
     if (this.img.width >= maxW || this.img.height >= maxH) {
       //高さの上限に合わせる

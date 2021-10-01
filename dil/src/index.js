@@ -200,8 +200,8 @@ class InteractCanvas {
   drawImageCenter() {
     //幅・高さの上限
     var maincanvas = document.getElementsByClassName('main-canvas');
-    const maxW = maincanvas.width;
-    const maxH = maincanvas.height;
+    const maxW = maincanvas.clientWidth* window.devicePixelRatio;
+    const maxH = maincanvas.clientWidth* window.devicePixelRatio;
     //描画する画像の幅もしくは高さが上限を超える場合
     if (this.img.width >= maxW || this.img.height >= maxH) {
       //高さの上限に合わせる

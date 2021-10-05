@@ -3,14 +3,22 @@ html, body{
    
  } 
 
+.printwarp{
+    margin: 0px;
+    padding: 0px;
+    width: 100vh;
+    height: 70vh;
+    border: 1px solid;
+}
+
 .print-area{
-    width: 100vw;
-   height: auto;
+    width: auto;
+    height: auto;
 }
 
 img{
-    width: 500px;
-    height: auto;
+    width: auto;
+    height: 100%;
 }
 
 

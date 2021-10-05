@@ -8,7 +8,7 @@ $(function () {
         outputImg.src = data;
         $('.print-area').append(outputImg);
         outputImg.onload=function(){
-        $('.print-area').addClass('print');
+        $('.printwarp').addClass('print');
         $('body > :not(.print)').addClass('print-off');
         window.print();
         $('print').removeClass('print');

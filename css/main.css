@@ -34,6 +34,17 @@ body{
     background-color: white;
 }
 
+
+/* print */
+.printwarp{
+    margin: 4%;
+    padding: 0px;
+    height: 70vh;
+    border: 1px solid;
+    display: none;
+}
+
+
 /* nav */
 .buttom-btn-nav{
     height: 100px;

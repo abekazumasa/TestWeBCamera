@@ -1,46 +1,31 @@
-html, body{
-    overflow: hidden; 
-   
- } 
-
-.printwarp{
-    margin: 0px;
-    padding: 0px;
-    width: 100vh;
-    height: 70vh;
-    border: 1px solid;
-}
-
-.print-area{
-    width: auto;
-    height: auto;
-}
-
-img{
-    width: auto;
-    height: 100%;
-}
-
-
-/* nav*/
-.buttom-btn-nav{
-    display: none;
-}
-.buttom-btn-nav ul{
-    display: none;
-}
-.buttom-btn-nav ul li{
-   display: none;
-}
-.buttom-btn-nav ul li label {
-    display: none;
-}
-.fileinput{
-   display: none;
-}
-button{
-   display: none;
-} 
 .print-off{
     display: none;
+}
+
+ul li{
+    display: none;
+}
+
+#getImgTag{
+    height: 80vh;
+}
+
+.warrp{
+    display: none;
+}
+#canvas-area{
+    display: none;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+}
+.printwarp{
+    width: 100%;
+    height: 100vh;
+}
+.print-area{
+    margin: 4%;
 }

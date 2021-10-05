@@ -137,9 +137,6 @@ class InteractCanvas {
   constructor() {
     this.file = document.getElementById('image_file');
 
-    //リサイズフラグ
-    this.resizeFlag = true;
-    this.resizeTimer = null;
 
     this.createCanvasContext();
     this.bind();
@@ -159,10 +156,10 @@ class InteractCanvas {
   //canvasの描画機能を有効化
   createCanvasContext() {
     this.canvas = document.getElementById('canvas-area');
-    this.canvas.width = this.canvas.clientWidth * window.devicePixelRatio;
+    this.canvas.width  = this.canvas.clientWidth * window.devicePixelRatio;
     this.canvas.height = this.canvas.clientHeight * window.devicePixelRatio;
-    this.ctx = this.canvas.getContext('2d');
-    this.isDrawed = false;
+    this.ctx           = this.canvas.getContext('2d');
+    this.isDrawed      = false;
   }
 
   //画像を読み込む
@@ -202,10 +199,11 @@ class InteractCanvas {
   drawImageCenter() {
     //幅・高さの上限
     var maincanvas = document.getElementsByClassName('main-canvas');
-    const maxW = maincanvas.clientWidth* window.devicePixelRatio;
-    const maxH = maincanvas.clientWidth* window.devicePixelRatio;
+    const limit = 0.8;
+    const maxW  = this.canvas.width * limit;
+    const maxH  = this.canvas.height * limit;
     //描画する画像の幅もしくは高さが上限を超える場合
-    if (this.img.width >= maxW || this.img.height >= maxH) {
+    if (this.img.width >= maxW || this.img.height >= maxW) {
       //高さの上限に合わせる
       this.drawHeight = maxH;
       this.drawWidth = this.drawHeight * (this.img.width / this.img.height);
@@ -220,9 +218,8 @@ class InteractCanvas {
       this.drawWidth = this.img.width;
       this.drawHeight = this.img.height;
     }
-    this.canvas.width = this.drawWidth;
-    this.canvas.height = this.drawHeight;
-
+    maincanvas.window =this.drawWidth;
+    maincanvas.height = this.drawHeight;
     //位置をcanvasの中心にする
     this.position = {
       x: this.canvas.width / 2 - this.drawWidth / 2,

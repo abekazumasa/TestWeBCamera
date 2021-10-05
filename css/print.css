@@ -7,7 +7,8 @@ ul li{
 }
 
 #getImgTag{
-    height: 80vh;
+    display: inline;
+    height: 70vh;
 }
 
 .warrp{

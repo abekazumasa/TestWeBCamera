@@ -5,39 +5,19 @@ html, body{
 
 /* main */
 body{
-   margin: 0px;
-   padding: 0px;
-   width: 100%;
-   height: 100%;
-}
 
-.warrp{
-   width: 100%;
-   height: 100vh;
-} 
-.main-canvas{
-   margin: 4%;
-   height: 50%;
-   position: relative;
-   top: 15%;
-  
-
-}
-#canvas-area{
-   touch-action: none;
-   user-select: none;
-   width: 100%;
-   height: 100%;
 }
 
 .print-area{
-   touch-action: none;
-   user-select: none;
-   z-index: 100;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: auto;
 }
 
 
-/* nav */
+/* nav
 .buttom-btn-nav{
     display: none;
 }
@@ -55,7 +35,7 @@ body{
 }
 button{
    display: none;
-}
+} */
 .print-off{
     display: none;
 }

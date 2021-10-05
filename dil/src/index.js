@@ -1,5 +1,6 @@
 import interact from 'interactjs'
 
+
 const dorag = interact('#canvas-area');
 var gestureArea = document.getElementsByClassName('main-canvas');
 var scaleElement = document.getElementById('canvas-area');
@@ -150,6 +151,7 @@ class InteractCanvas {
     this.file.addEventListener('change', (e) => {
       this.loadImage(e);
     }, false);
+    
   }
 
 

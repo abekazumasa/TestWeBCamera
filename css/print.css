@@ -3,21 +3,16 @@ html, body{
    
  } 
 
-/* main */
-body{
-
-}
-
 .print-area{
    position: fixed;
    top: 0;
    left: 0;
-   width: 100%;
+   width: 100vw;
    height: auto;
 }
 
 
-/* nav
+/* nav*/
 .buttom-btn-nav{
     display: none;
 }
@@ -35,7 +30,7 @@ body{
 }
 button{
    display: none;
-} */
+} 
 .print-off{
     display: none;
 }

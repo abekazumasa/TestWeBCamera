@@ -7,7 +7,7 @@ $(function () {
         var data = canvasData.toDataURL();
         outputImg.src = data;
         $('.print-area').append(outputImg);
-        $('.printwarp').addClass('print');s
+        $('.printwarp').addClass('print');
         outputImg.onload=function(){
         $('body > :not(.print)').addClass('print-off');
         window.print();

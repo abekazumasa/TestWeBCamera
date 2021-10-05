@@ -8,12 +8,11 @@ $(function () {
         outputImg.src = data;
         $('.print-area').append(outputImg);
         $('.printwarp').addClass('print');
-        outputImg.onload=function(){
         $('body > :not(.print)').addClass('print-off');
         window.print();
         $('print').removeClass('print');
         $('.print-off').removeClass('print-off');
         outputImg.remove();
-        }
+        
     });
 });
